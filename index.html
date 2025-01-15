@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Website</title>
+  <style>
+    /* Reset some basic elements */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4; /* This is the main background of the website */
+      background-attachment: fixed; /* Keeps the body background fixed while scrolling */
+    }
+
+    /* Header styling */
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 2em;
+    }
+
+    header nav ul {
+      list-style: none;
+    }
+
+    header nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    /* Home Page Section */
+    #home {
+      background-image: url('https://png.pngtree.com/background/20230616/original/pngtree-faceted-abstract-background-in-3d-with-shimmering-iridescent-metallic-texture-of-picture-image_3653595.jpg');
+      color: white;
+      padding: 150px 0; /* Increased height of the home section */
+      text-align: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #home h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    #home p {
+      font-size: 1.2em;
+    }
+
+    /* About Section */
+    #about {
+      background-color: #fdfdfd; /* Use a solid color instead of an image */
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    #about h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    #about p {
+      font-size: 1.2em;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .about-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .about-left h3 p{
+      flex: 1;
+      text-align: left;
+      margin-left: 5px; /* Added left margin */
+    }
+
+    .about-right {
+      flex: 1;
+      text-align: center;
+    }
+
+    /* Styling for image */
+    .about-right img {
+      width: 350px; /* Increased size */
+      height: 350px; /* Increased size */
+      border-radius: 50%; /* Circle shape */
+      object-fit: cover; /* Ensures image covers the circle */
+      margin-top: 20px;
+    }
+
+    /* Our Services Section */
+    #services {
+      background-image: url('https://img.freepik.com/premium-photo/yellow-blue-abstract-creative-background-blue-abstract-background-geometric-background_481527-27945.jpg?semt=ais_hybrid');
+      background-size: cover; /* Ensure the image covers the entire background */
+      background-position: center; /* Center the image */
+      background-attachment: fixed; /* Make the background fixed while scrolling */
+      padding: 100px 0; /* Increased height of the services section */
+    }
+
+    #services h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-align: center; /* Center the title */
+      width: 100%;
+    }
+
+    #services .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px; /* Added gap between service boxes */
+      justify-content: center; /* Ensures the boxes are centered */
+    }
+
+    .service-box {
+      background-color: #ffffff;
+      width: 23%; /* Adjusted width to fit 4 boxes in one line */
+      padding: 40px; /* Increased padding */
+      margin: 10px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-box h3 {
+      font-size: 2em; /* Increased font size */
+      margin-bottom: 15px;
+    }
+
+    .service-box p {
+      font-size: 1.2em; /* Increased font size */
+    }
+
+    /* Hover Effect for Service Boxes */
+    .service-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Incremental Counter Section */
+    #counter {
+      padding: 60px 0;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    #counter h2 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+    }
+
+    .counter-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .counter-box {
+      width: 30%;
+      background-color: #ffffff;
+      padding: 40px;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .counter {
+      font-size: 3em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .counter-box p {
+      font-size: 1.2em;
+      color: #777;
+    }
+
+    /* Responsive Design for Counter Section */
+    @media (max-width: 768px) {
+      .counter-box {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .counter-box {
+        width: 80%;
+      }
+    }
+
+    /* Contact Section */
+    #contact {
+      background-color: #f0ebeb;
+      padding: 40px 0;
+    }
+
+    #contact .container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    #contact form {
+      width: 48%; /* Take up 48% of the space */
+    }
+
+    #contact form label {
+      font-size: 1.2em;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    #contact form input,
+    #contact form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 1.1em;
+      border: 1px solid #ccc;
+    }
+
+    #contact form button {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+    #contact form button:hover {
+      background-color: #555;
+    }
+
+    .map-container {
+      width: 48%; /* Take up 48% of the space */
+      height: 400px; /* Set a height for the map */
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <h1>My Company</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home Page Section -->
+  <section id="home">
+    <div class="container">
+      <h2>Welcome to My Website</h2>
+      <p>Your trusted partner for reliable and professional services. We provide the best solutions for all your needs. Explore more about us!</p>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <div class="about-container">
+        <div class="about-left">
+          <h2>Welcome to Our Website</h2>
+          <p style="font-size: medium;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi nisi veritatis quisquam vitae ut in a alias, quo voluptas! Tempora odio cumque omnis ducimus ipsa voluptas ipsam mollitia magni distinctio officiis provident adipisci modi necessitatibus officia nam, eos tempore sed dolore laboriosam. Architecto illum quos vero, similique sunt laborum blanditiis reprehenderit consectetur fugit inventore quisquam omnis, obcaecati assumenda a magni dicta quas quo sed in hic vel ad. Aliquam voluptas saepe voluptates consequuntur a obcaecati dolorem iure sint earum non laborum quo tempora et, placeat labore aliquid totam, veritatis, dolorum qui mollitia odit asperiores voluptatem architecto! Dignissimos quae iure optio a ducimus, eum adipisci praesentium! Molestias obcaecati saepe vitae quisquam deserunt quod consequuntur possimus eveniet nisi ea eos dolore rerum reprehenderit recusandae, numquam cum accusantium enim quasi temporibus! Aut tempore esse molestiae omnis inventore nobis illo, cum fuga distinctio doloremque, ipsam libero provident mollitia vel nulla dignissimos quidem eum. </p>
+        </div>
+        <div class="about-right">
+          <img src="https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" alt="About Us Image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="container">
+      <div class="service-box">
+        <h3>Study Material</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quam adipisci iste, ipsa rem delectus ipsam sequi corrupti tenetur veniam qui inventore at doloribus, nemo aspernatur voluptates. Aperiam, incidunt quae.</p>
+      </div>
+      <div class="service-box">
+        <h3>Recorded Video</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam impedit dolor facilis vero officiis eius, ratione reiciendis aliquid repudiandae fuga inventore, fugiat assumenda eos sapiente, ad totam mollitia porro nostrum.</p>
+      </div>
+      <div class="service-box">
+        <h3>Resume Build</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum earum ex fugiat quasi recusandae debitis, libero omnis perferendis non facilis cum magni iusto enim maxime qui eaque rerum! Voluptatem, rem.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Incremental Counter Section -->
+  <section id="counter">
+    <h2>Our Achievements</h2>
+    <div class="counter-container">
+      <div class="counter-box">
+        <h3 class="counter" data-target="1500">0</h3>
+        <p>Projects Completed</p>
+      </div>
+      <div class="counter-box">
+        <h3 class="counter" data-target="500">0</h3>
+        <p>Happy Clients</p>
+      </div>
+      <div class="counter-box">
+        <h3 class="counter" data-target="120">0</h3>
+        <p>Team Members</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <form action="submit.php" method="POST">
+        <h2>Contact Us</h2>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 My Company. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const counters = document.querySelectorAll('.counter');
+      
+      function incrementCounter(counter) {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const speed = 2000; // Time for the count to reach the target
+        const increment = target / speed;
+        
+        function updateCounter() {
+          if (count < target) {
+            count += increment;
+            counter.innerText = Math.floor(count);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.innerText = target;
+          }
+        }
+
+        updateCounter();
+      }
+
+      counters.forEach(counter => {
+        incrementCounter(counter);
+      });
+    });
+  </script>
+
+</body>
+</html>
